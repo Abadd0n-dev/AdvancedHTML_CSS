@@ -1,5 +1,6 @@
-$abs: absolute;
-$rel: relative;
+@import 'vars';
+@import 'mixin';
+
 * {
     padding: 0;
     margin: 0;
@@ -17,14 +18,10 @@ body {
     font-family: 'Lato';
 }
 .padding-site {
-    padding-left: 14.375% !important;
-    padding-right: 14.375% !important;
-    box-sizing: border-box !important;
+    @include padding-site;
 }
 .padding-site-header {
-    padding-left: 14.375% !important;
-    padding-right: 14.375% !important;
-    box-sizing: border-box !important;
+    @include padding-site;
 }
 
 
@@ -84,7 +81,7 @@ body {
     &-subtitle {
         font-size: 14px;
         line-height: 17px;
-        color: #F16D7F;
+        color: $mainColor;
         font-weight: 400;
         text-decoration: none;
         display: block;
@@ -111,7 +108,7 @@ body {
     width: 100%;
     height: 3px;
     background-color: #E8E8E8;;
-    position: absolute;
+    position: $abs;
     top: -10px;
     left: 0;
 }
@@ -120,15 +117,15 @@ body {
     top: 10px;
 }
 .header-basket-btn {
-    position: relative;
+    position: $rel;
 }
 .basket-meter > svg {
-    position: absolute;
+    position: $abs;
     left: 22px;
     bottom: 18px;
 }
 .basket-meter > svg:nth-of-type(2) {
-    position: absolute;
+    position: $abs;
     left: 28.6px;
     bottom: 22px;
 }
@@ -161,7 +158,7 @@ body {
     width: 100%;
     height: 3px;
     background-color: #fff;
-    position: relative;
+    position: $rel;
 }
 .header-container {
     width: 1140px;
@@ -181,7 +178,7 @@ body {
     align-items: flex-end;
     padding: 18px 0;
     box-sizing: border-box;
-    position: relative;  
+    position: $rel;  
     background-size: cover;  
     &-search-btn {
         width: 0;
@@ -190,7 +187,7 @@ body {
         box-sizing: border-box;
         background-color: transparent;
         border: none;
-        position: absolute;
+        position: $abs;
         top: -1px;
         left: 30px;
         color: #fff;
@@ -215,7 +212,7 @@ body {
     &-form {
         display: flex;
         flex-wrap: wrap;
-        position: relative;
+        position: $rel;
     }
     &-form svg {
         fill: #fff;
@@ -314,10 +311,10 @@ body {
     content: "";
     top: 290px;
     left: 54%;
-    position: absolute;
+    position: $abs;
     width: 12px;
     height: 92px;
-    background-color: #F16D7F;
+    background-color: $mainColor;
 }
 .categories {
     display: flex;
@@ -500,7 +497,7 @@ body {
 .card-price {
     font-size: 16px;
     line-height: 19px;
-    color: #F16D7F;
+    color: $mainColor;
     padding: 18px 0 0 18px;
 }
 .margin-30-top {
@@ -520,15 +517,15 @@ body {
     &_btn {
         font-size: 16px;
         line-height: 19px;
-        color: #F26376;
-        border: 1px solid #F26376;
+        color: $mainColor;
+        border: 1px solid $mainColor;
         padding: 14px 38.5px;
         display: inline-block;
         text-decoration: none;
         margin-top: 18.5px;
     }
     &_btn:hover {
-        background: #F16D7F;
+        background: $mainColor;
         color: #FFFFFF;
     }
     &_btn_parent {
@@ -556,7 +553,7 @@ body {
     text-align: center;
 }
 .features {
-    background-color: #222224;
+    background-color: $colorTitle;
     width: 100%;
     height: 341px;
     margin-top: 95.5px;
@@ -591,15 +588,7 @@ body {
         margin-top: 103px;
     }
 }
-.filter-menu-switch-brand {
-    display: none;
-}
-.filter-menu-switch-category {
-    display: none;
-}
-.filter-menu-switch-designer {
-    display: none;
-}
+
 .subscribe {
     width: 100%;
     box-sizing: border-box;
@@ -618,14 +607,14 @@ body {
         left: 14.25%;
     }
     &-title {
-        color: #222224;
+        color: $colorTitle;
         line-height: 167.2%;
         font-weight: 700;
         font-size: 24px;
         margin-top: 150px;
     }
     &-subtitle {
-        color: #222224;
+        color: $colorTitle;
         font-weight: 400;
         line-height: 30.1px;
         font-size: 18px;
@@ -641,7 +630,7 @@ body {
         line-height: 17px;
         display: flex;
         align-items: center;
-        color: #222224;
+        color: $colorTitle;
         padding: 7px 64px 6px 22px;
         border: none;
         width: 256px;
@@ -667,7 +656,7 @@ body {
         height: 49px;
         border: none;
         border-radius: 0 25px 25px 0;
-        background-color: #F16D7F;
+        background-color: $mainColor;
     }
     &-btn:hover {
         background-color: rebeccapurple;
@@ -689,7 +678,7 @@ body {
 .footer {
     box-sizing: border-box;
     width: 100%;
-    background-color: #222224;
+    background-color: $colorTitle;
     min-height: 79px;
     display: flex;
     justify-content: space-between;
@@ -719,7 +708,7 @@ body {
         margin: 0;
     }
     &-socials-item:hover {
-        background-color: #F16D7F;
+        background-color: $mainColor;
     }
     &-socials-item:hover > svg {
         fill: white;
@@ -740,19 +729,19 @@ body {
 .page-header-title {
     font-size: 24px;
     line-height: 29px;
-    color: #F16D7F;
+    color: $mainColor;
     padding-top: 59px;
 }
 .page-cart-header-title {
     font-size: 24px;
     line-height: 29px;
-    color: #F16D7F;
+    color: $mainColor;
     padding-top: 59px;
 }
 .page-registration-header-title {
     font-size: 24px;
     line-height: 29px;
-    color: #F16D7F;
+    color: $mainColor;
     padding-top: 59px;
 }
 .page-header-breadcrumb {
@@ -770,7 +759,7 @@ body {
     line-height: 17px;
 }
 .page-header-breadcrumb li {
-    color: #F16D7F;
+    color: $mainColor;
     font-weight: 700;
     font-size: 14px;
     line-height: 16.8px;
@@ -784,7 +773,7 @@ body {
 .header-txt-active {
     font-size: 14px;
     line-height: 17px;
-    color: #F16D7F;
+    color: $mainColor;
     font-weight: 700;
 }
 .page-header-decoration {
@@ -970,7 +959,7 @@ a {
 .size-menu {
     box-sizing: border-box;
     height: 103px;
-    position: absolute;
+    position: $abs;
     left: 151px;
     z-index: 10;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
@@ -1019,7 +1008,7 @@ a {
 .right-filtres {
     min-width: 300px;
     margin: 0 auto;
-    position: relative;
+    position: $rel;
 }
 .scroll {
     border: 1px solid #EBEBEB;
@@ -1092,7 +1081,7 @@ a {
     fill: #000000;
 }
 .left-arrow-block:hover > svg {
-    fill: #F16D7F;
+    fill: $mainColor;
 }
 .right-arrow-block {
     width: 47px;
@@ -1106,7 +1095,7 @@ a {
     fill: #000000;
 }
 .right-arrow-block:hover > svg {
-    fill: #F16D7F;
+    fill: $mainColor;
 }
 
 .page-product-card {
@@ -1115,7 +1104,7 @@ a {
     background-color: #FFFFFF;
     margin: -65px auto 0 auto;
     z-index: 20;
-    position: relative;
+    position: $rel;
 }
 .page-product-cards {
     max-width: 1140px;
@@ -1126,7 +1115,7 @@ a {
         font-weight: 300;
         font-size: 14px;
         line-height: 17px;
-        color: #F16D7F;
+        color: $mainColor;
     }
     &-card-subtitle {
         font-weight: 300;
@@ -1148,7 +1137,7 @@ a {
         font-weight: 300;
         font-size: 24px;
         line-height: 29px;
-        color: #EF5B70;
+        color: $mainColor;
         margin-top: 32px;
     }
     &-card-filters {
@@ -1186,22 +1175,22 @@ a {
     justify-content: center;
     align-items: center;
     border: 1px solid #EAEAEA;
-    position: relative;
+    position: $rel;
     &::before {
         content: "";
         width: 63px;
         height: 3px;
-        background-color: #EF5B70;
+        background-color: $mainColor;
         display: block;
-        position: absolute;
+        position: $abs;
         top: 80px;
     }
 }
 .page-product-btn {
     font-size: 16px;
     line-height: 19px;
-    color: #F26376;
-    border: 1px solid #F26376;
+    color: $mainColor;
+    border: 1px solid $mainColor;
     padding: 14px 38.5px;
     display: inline-block;
     text-decoration: none;
@@ -1210,7 +1199,7 @@ a {
     justify-content: center;
     align-items: center;
     & > svg {
-        fill: #F26376;
+        fill: $mainColor;
         padding-right: 23px;
     }
     &:hover > svg {
@@ -1218,7 +1207,7 @@ a {
     }
     &:hover {
         color: #FFFFFF;
-        background-color: #F16D7F;
+        background-color: $mainColor;
     }
 }
 .mini-card {
@@ -1229,7 +1218,7 @@ a {
     height: 306px;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    position: relative;
+    position: $rel;
     box-shadow: 7px 7px 8px 0px rgba(34, 60, 80, 0.2);
     margin: 96px 0 40px 0;
     &-2 {
@@ -1240,7 +1229,7 @@ a {
         min-height: 306px;
         background-color: #FFFFFF;
         box-sizing: border-box;
-        position: relative;
+        position: $rel;
         box-shadow: 7px 7px 8px 0px rgba(34, 60, 80, 0.2);
         margin: 0 0 72.5px 0;
     }
@@ -1267,13 +1256,13 @@ a {
         width: 18px;
         height: 2px;
         content: "";
-        position: absolute;
+        position: $abs;
         background-color: #575757;
         right: 22px;
         top: 28px;
     }
     &-btn {
-        position: absolute;
+        position: $abs;
         background-color: transparent;
         right: 22px;
         top: 28px;
@@ -1286,7 +1275,7 @@ a {
         transform: rotate(-45deg);
     }
     &-price {
-        color: #F16D7F;
+        color: $mainColor;
         font-size: 22px;
         line-height: 26px;
     }
@@ -1323,7 +1312,7 @@ a {
     border: 1px solid #A4A4A4;
     background-color: transparent;
     &:hover {
-        background-color: #F16D7F;
+        background-color: $mainColor;
         color: #FFFFFF;
     }
 
@@ -1367,7 +1356,7 @@ a {
         margin-top: 24px;
     }
     &-btn:hover {
-        background-color: #F16D7F;
+        background-color: $mainColor;
         color: #FFFFFF;
     }
 }
@@ -1407,11 +1396,11 @@ a {
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;
-        color: #F16D7F;
+        color: $mainColor;
     }
     &-btn {
         padding: 15px 43px 16px 41px;
-        background-color: #F16D7F;
+        background-color: $mainColor;
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;
@@ -1470,11 +1459,11 @@ a {
 .registration-btn {
     font-size: 14px;
     line-height: 17px;
-    color: #F16D7F;
+    color: $mainColor;
     display: flex;
     align-items: center;
     padding: 16px 29px 17px 29px;
-    border: 1px solid #F16D7F;
+    border: 1px solid $mainColor;
     box-sizing: border-box;
     max-width: 170px;
     min-height: 50px;
@@ -1484,12 +1473,12 @@ a {
     background-position: 121px 20px;
     background-color: transparent;
     & > svg {
-        fill: #F16D7F;
+        fill: $mainColor;
         padding-left: 20px;
     }
     &:hover {
         color: #FFFFFF;
-        background-color: #F16D7F;
+        background-color: $mainColor;
         background-image: url(../all-images/registration/arrow-right-white.svg);
     }
     &:hover > svg {
@@ -1715,264 +1704,3 @@ a {
         margin-left: 17px;
     }
 }
-@media(max-width: 667px) {
-    .header-banner {
-        height: 363px;
-        background-image: none;
-    }
-    
-    .header-banner::before {
-        height: 61px;
-        left: 56px;
-        top: 230px;
-    }
-    .header_slogan {
-        left: 83px;
-        top: 222px;
-    }
-    .page-registration-form {
-        margin-top: 40px;
-    }
-    .page-product-card::before {
-        top: 68px;
-    }
-    .size-menu {
-        top: 18px;
-    }
-    .footer {
-        height: 143px;
-    }
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-rights {
-        order: 2;
-        padding-bottom: 24px;
-    }
-    .footer-socials {
-        padding-top: 43px;
-    }
-    .header-account-btn {
-        display: none;
-    }
-    .header-basket-btn {
-        display: none;
-    }
-    .header-menu-btn {
-        transform: translate(140px,0);
-    }
-    .header_rectangle {
-        top: 225px;
-        left: 56px;
-        height: 61px;
-    }
-    .header_slogan {
-        font-size: 38px;
-        line-height: 45,6px;
-    }
-    .header_slogan_item {
-        font-size: 20px;
-        line-height: 24px;
-        transform: translate(0, -28px);
-    }
-    .header_slogan_red_item {
-        font-size: 20px;
-        line-height: 24px;
-        transform: translate(0, -28px);
-    }
-    .categories-images {
-        max-width: 343px;
-        margin-bottom: 32px;
-    }
-
-    .categories {
-        margin-top: 64px;
-    }
-    .categories-images-last {
-        max-width: 343px;
-        margin-top: 0;
-    }
-    .product-title {
-        margin-top: 64px;
-    }
-    .product-txt {
-        margin-bottom: 64px;
-    }
-    .cards {
-        justify-content: center;
-    }
-    .card {
-        margin-bottom: 16px;
-    }
-    .product_btn {
-        margin-top: 41px;
-    }
-    .features {
-        margin-top: 96.5px;
-    }
-    .subscribe-left-group {
-        left: 8px;
-    }
-    .text-inside-for-things {
-        left: 92px;
-    }
-    .right-filtres {
-        margin: 0 8px 0 auto;
-        display: flex;
-        justify-content: flex-end;
-    }
-    .right-filter-txt > svg {
-        padding: 0 24px 2px 9px;
-    }
-    .filter-txt {
-        font-size: 0;
-    }
-    .filter-txt > svg:nth-of-type(1) {
-        display: none;
-    }
-    .filter-txt > svg:nth-of-type(2) {
-        display: block;
-        margin-left: 8px;
-        padding: 0;
-    }
-    .right-filter-txt {
-        font-size: 12px;
-        line-height: 14px;
-        font-weight: 400;
-    }
-    .filter-menu-btn {
-        margin: 0;
-    }
-    .filter-menu {
-        top: 75px;
-    }
-    .page-container {
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .page-header-title {
-        padding: 24px 0 0 0;
-    }
-    .page-header-breadcrumb {
-        padding: 32px 0 0 0;
-    }
-    .scroll {
-        margin-top: 24px;
-        margin-bottom: 64.5px;
-    }
-    .page-content {
-        background-image: url(../all-images/365-tablet/page-product-365-tablet-woman.png);
-    }
-    .page-product-hr {
-        width: 175px;
-    }
-    .product-card-filters-txt {
-        font-size: 10px;
-        line-height: 12px;
-    }
-    .product-card-filters {
-        justify-content: space-around;
-    }
-    .mini-card {
-        width: 358px;
-        background-image: url(../all-images/365-tablet/page-cart-mini-cart-1.png);
-        height: 188px;
-        margin: 39px auto 32px auto;
-    }
-    .mini-card:nth-child(2) {
-        margin: 0 auto;
-        background-image: url(../all-images/365-tablet/page-cart-mini-cart-2.png);
-    }
-    .mini-card-title {
-        font-size: 16px;
-        line-height: 19px;
-        margin-left: 158px;
-        margin-bottom: 26px;
-        padding-top: 13.5px;
-        width: 143px;
-    }
-    .mini-card-txt {
-        font-size: 14px;
-        line-height: 17px;
-        margin-left: 158px;
-        margin-bottom: 4px;
-    }
-    .mini-card-btn {
-        top: 17px;
-        right: 12px;
-    }
-    .mini-card-btn > svg {
-        width: 10px;
-        height: 11px;
-    }
-    .mini-card-number {
-        width: 24px;
-        height: 15px;
-        margin-left: 15px;
-        font-size: 14px;
-        line-height: 17px;
-    }
-    .mini-card-price {
-        font-size: 14px;
-        line-height: 17px;
-    }
-    .card-button {
-        padding: 9px 18px 10px 18px;
-        font-size: 12px;
-        line-height: 14px;
-        text-transform: lowercase;
-        width: 174px;
-        box-sizing: border-box;
-        height: 32px;
-    }
-    .card-button:nth-child(2) {
-        margin-left: 10px;
-    }
-    .card-button::first-letter {
-        text-transform: uppercase;
-    }
-    .mini-card-buttons {
-        width: 358px;
-        margin: 30px auto 0 auto;
-    }
-    .page-cart-product-form {
-        flex-direction: column;
-    }
-    .page-cart-product-cards {
-        width: 100%;
-    }
-    .page-cart-product-form {
-        width: 358px;
-    }
-    .page-form-title {
-        margin-top: 48px;
-    }
-    .subprice {
-        margin-top: 48.5px;
-    }
-    .page-cart-product {
-        margin-bottom: 96px;
-    }
-    .page-cart-header-title {
-        padding-top: 50px;
-    }
-    .page-registration-container {
-        flex-direction: column;
-    }
-    .page-registration-form {
-        margin-left: 9px;
-    }
-    .page-registration-advantages {
-        margin-left: 9px;
-        margin-bottom: 96px;
-    }
-    .registration-btn {
-        margin-top: 36px;
-    }
-    .page-registration-header-title {
-        padding-top: 60px;
-    }
-}
-
